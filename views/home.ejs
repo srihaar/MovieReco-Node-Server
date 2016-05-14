@@ -28,9 +28,11 @@
                             <div class="content">
                                 
                                   <ul class="nav nav-tabs list" id="myTab">
-                                    <li ng-repeat="movie in record.movies"><a ng-click="getDetail(movie.movieName)">{{movie.movieName}}</a></li>
+                                    <li ng-repeat="movie in record.movies" style="padding:20px;><img ng-click="getDetail(movie.movieName)" ng-src="movie.Poster" style="height:150px;width:120px;></img></li>
                                      
                                     </ul>
+
+                                    
                                
                             </div>
                     </div>

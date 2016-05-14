@@ -61,7 +61,7 @@ angular.module("myApp", ['ui.router', 'ng-fusioncharts'])
                              // $scope.reco[i].Poster = true;
                               if($scope.data[i].movieName.indexOf('(')>0){
                                   var name = $scope.data[i].movieName.substr(0,$scope.data[i].movieName.indexOf('('));
-                                  $scope.reco[i].movieName = name;
+                                  $scope.data[i].movieName = name;
                               }
                               call(i);
                           }
