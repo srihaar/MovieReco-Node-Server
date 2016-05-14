@@ -30,7 +30,9 @@
                             <div class="content">
                                 
                                   <ul class="nav nav-tabs list" id="myTab">
-                                       <li ng-repeat="record in reco"><a ng-click="getDetail(record.movieName)">{{record.movieName}}</a></li>
+                                       <li ng-repeat="record in reco" style="padding:20px;"><img ng-click="getDetail(record.movieName)" ng-src="{{record.Poster}}" style="height:150px;width:120px;">
+                                       
+                                       </img></li>
                                        
                                       
                                     </ul>
