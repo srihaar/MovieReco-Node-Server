@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Movie Recommendation System</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href"css/mine.css" rel="stylesheet"></script>
+    <link href="css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+    
+     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+     <script src="js/mine.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+     <script src = "js/angular-fusioncharts.min.js"></script>
+     <script src = "js/angular-ui-router.min.js"></script>
+     <script src="controller/mainCtrl.js"></script>
+     
+</head>
+<body ng-controller="MainCtrl">
+
+<div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="img/sidebar-5.jpg">
+
+   
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a class="simple-text">
+                    Movie Recommendations
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a ui-sref="homeUserBased">
+                        
+                        <p>Home</p>
+                    </a>
+                </li>
+                <!--<li>
+                    <a href="user.html">
+
+                        <p>User Profile</p>
+                    </a>
+                </li>-->
+                <li>
+                    <a href="user.html">
+                        
+                        <p>Your Ratings</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="Graphs">
+                        
+                        <p>Top Movies</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref="pieGraphs">
+                        
+                        <p>Interested Genre</p>
+                    </a>
+                </li>
+                <li>
+                    <a ng-click="logOut()">
+                        
+                        <p>Log Out</p>
+                    </a>
+                </li>
+                
+               
+				
+            </ul>
+    	</div>
+    </div>
+
+  <div ui-view="home"></div>
+   <div ui-view="homeUser"></div>
+    <div ui-view="homeTag"></div>
+  <div ui-view="detail"></div>
+   <div ui-view="graphView"></div>
+    <div ui-view="pieGraphView"></div>
+
+
+</body>
+
+    
+	
+
+	
+    
+    </html>

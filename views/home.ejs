@@ -1,0 +1,64 @@
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            
+                <div class="navbar-header">
+                    
+                    <a class="navbar-brand" href="#">Movies&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+                </div>
+                
+                <ul class="nav navbar-nav" style="padding-top:10px;">
+                  <select class="form-control" ng-model="current" ng-change="redirect(current)" ng-options="value for value in values">
+                    
+                   </select>
+                 
+                   </ul>
+                
+                
+               
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row" ng-repeat="record in finalData">
+                    <div class="card">
+                            <div class="header">
+                                <h4 class="title">{{record.genreName}}</h4>
+                            </div>
+                            <div class="content">
+                                
+                                  <ul class="nav nav-tabs list" id="myTab">
+                                    <li ng-repeat="movie in record.movies"><a ng-click="getDetail(movie.movieName)">{{movie.movieName}}</a></li>
+                                     
+                                    </ul>
+                               
+                            </div>
+                    </div>
+                </div>
+               
+               
+                
+                
+                
+     
+
+
+
+
+
+
+
+
+
+
+
+                               
+                        
+            
+        
+
+
+        
+
+    </div>
+</div>
