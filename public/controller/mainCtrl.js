@@ -44,7 +44,33 @@ angular.module("myApp", ['ui.router', 'ng-fusioncharts'])
                             $scope.current = "Genre-based";
                             $http.post("http://localhost:8080/genre", params).success(function (data) {
                                 $scope.data = data;
-                                console.log(data);
+                                console.log($scope.data);
+                                var call = function(i){
+                                $http.get("http://www.omdbapi.com/?t="+$scope.data[i].movieName+"&y=&plot=full&r=json").success(function(response){
+                            
+                                  console.log($scope.data[i]);
+                                  $scope.data[i].Poster = response.Poster;
+                                  
+                                //  $scope.data.push({"Poster":response.Poster});
+                              });
+                                
+                            }
+                          
+                          if($scope.data){
+                          for(var i=0;i<$scope.data.length;i++){
+                             // $scope.reco[i].Poster = true;
+                              if($scope.data[i].movieName.indexOf('(')>0){
+                                  var name = $scope.data[i].movieName.substr(0,$scope.data[i].movieName.indexOf('('));
+                                  $scope.reco[i].movieName = name;
+                              }
+                              call(i);
+                          }
+                            
+
+
+
+
+
                                 var genreName = [];
                                 $scope.finalData = [];
 
@@ -149,6 +175,29 @@ angular.module("myApp", ['ui.router', 'ng-fusioncharts'])
                             console.log(data);
                             $scope.reco = data;
                         })
+
+
+
+                        var call = function(i){
+                            $http.get("http://www.omdbapi.com/?t="+$scope.reco[i].movieName+"&y=&plot=full&r=json").success(function(response){
+                             console.log($scope.reco[i]);
+                            $scope.reco[i].Poster = response.Poster;
+                                  
+                                //  $scope.data.push({"Poster":response.Poster});
+                              });
+                                
+                            }
+                          
+                          if($scope.reco){
+                          for(var i=0;i<$scope.reco.length;i++){
+                             // $scope.reco[i].Poster = true;
+                              if($scope.reco[i].movieName.indexOf('(')>0){
+                                  var name = $scope.reco[i].movieName.substr(0,$scope.reco[i].movieName.indexOf('('));
+                                  $scope.reco[i].movieName = name;
+                              }
+                              call(i);
+                          }
+                            
 
 
                         $scope.redirect = function (value) {
