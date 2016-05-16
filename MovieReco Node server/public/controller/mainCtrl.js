@@ -18,6 +18,13 @@ angular.module("myApp", ['ui.router', 'ng-fusioncharts'])
             $rootScope.userId = data.userId;
             $rootScope.type = data.type;
             console.log(data);
+             if ($rootScope.type=='PC') {
+                $state.go("homeUserBased");
+            };
+
+            if($rootScope.type=="GA"){
+              $state.go("HomeState");   
+            }
         }).error(function (error) {
             alert("Something went wrong, please try again");
         })
@@ -301,10 +308,7 @@ angular.module("myApp", ['ui.router', 'ng-fusioncharts'])
 
                     templateUrl: "/pieGraphView",
                     controller: function ($scope, $http, $state, $rootScope) {
-                        $scope.reco = [{"genre": "Action", "value": 7}, {
-                            "genre": "Thriller",
-                            "value": 8
-                        }, {"genre": "Comedy", "value": 11}];
+                       
                         var r = $scope.reco;
                         var data = new google.visualization.DataTable();
                         data.addRows(r.length);
